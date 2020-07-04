@@ -6,7 +6,7 @@ include_once '../includes/header.php';
 <div class="row">
     <div class="col s12 m6 push-m3">
       <h3 class="light">Cadastro de Vendedores</h3>
-      <form action="DAO/create.php" method="POST">
+      <form action="../DAO/create.php" method="POST">
         <div class="input-field col s12">
           <input type="text" name="nome" id="nome">
           <label for="nome">Nome</label>
@@ -18,7 +18,7 @@ include_once '../includes/header.php';
         </div>
 
         <div class="input-field col s12">
-          <input type="text" name="comissao" id="comissao" placeholder="8.50" disabled>
+          <input type="text" name="comissao" id="comissao" value=8.50 disabled>
           <label for="email">Comissão (%)</label>
         </div>
 
