@@ -1,13 +1,9 @@
 <?php
-//Sessão
-//Mostrar mensagem quando salvar ou editar
-session_start();
-if(isset($_SESSION['mensagem'])):
-    echo $_SESSION['mensagem'];
-endif;
-session_unset();
 //Header
 include_once 'includes/header.php';
+
+//Mostrar mensagem quando salvar ou editar
+include_once 'includes/mensagem.php';
 //Conexão
 include_once 'DAO/db_config.php';
 ?>
