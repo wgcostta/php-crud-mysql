@@ -9,5 +9,4 @@ CREATE TABLE `vendedores` (
 )
 COLLATE='utf8_unicode_ci'
 ENGINE=InnoDB
-AUTO_INCREMENT=19
 ;
