@@ -1,4 +1,7 @@
 <?php
+//Sessão
+session_start();
+
 //Conexão
 require_once 'db_config.php';
 
@@ -12,9 +15,11 @@ if(isset($_POST['btn-cadastrar'])):
 			('$nome','$email','8.5')";
 
 	if(mysqli_query($connect,$sql)):
-		header('Location: ../index.php?sucesso');
+		$_SESSION['mensagem'] = "Cadastrado com sucesso";
+		header('Location: ../index.php');
 	else:
-		header('Location: ../index.php?erro');
+		$_SESSION['mensagem'] = "Erro ao cadastrar";
+		header('Location: ../index.php');
 	endif;
 endif;
 

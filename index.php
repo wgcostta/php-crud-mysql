@@ -1,6 +1,15 @@
 <?php
+//Sessão
+//Mostrar mensagem quando salvar ou editar
+session_start();
+if(isset($_SESSION['mensagem'])):
+    echo $_SESSION['mensagem'];
+endif;
+session_unset();
 //Header
 include_once 'includes/header.php';
+//Conexão
+include_once 'DAO/db_config.php';
 ?>
 
 <div class="row">
@@ -15,18 +24,26 @@ include_once 'includes/header.php';
             </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Wagner Costa 007</td>
-            <td>wg.o.costa@gmail.com</td>
-            <td><a href="" class="btn-floating blue">
-              <i class="material-icons">edit</i>
-            </a></td>
-            <td><a href="" class="btn-floating red">
-              <i class="material-icons">delete</i>
-            </a></td>
-           
-          </tr>
+          <?php
+            $sql = "SELECT * FROM vendedores";
+            $resultado = mysqli_query($connect,$sql);
+            while($dados = mysqli_fetch_array($resultado)):
+          ?>
+              <tr>
+                <td><?php echo $dados['ID']; ?></td>
+                <td><?php echo $dados['NOME']; ?></td>
+                <td><?php echo $dados['EMAIL']; ?></td>
+                
+                <td><a href="" class="btn-floating blue">
+                  <i class="material-icons">edit</i>
+                </a></td>
+
+                <td><a href="" class="btn-floating red">
+                  <i class="material-icons">delete</i>
+                </a></td>
+               
+              </tr>
+            <?php endwhile; ?>
         </tbody>
       </table>
       <br>
