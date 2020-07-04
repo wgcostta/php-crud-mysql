@@ -34,9 +34,30 @@ include_once 'DAO/db_config.php';
                   <i class="material-icons">edit</i>
                 </a></td>
 
-                <td><a href="view/deletar.php?id=<?php echo $dados['ID']; ?>" class="btn-floating red">
+                <td><a href="#modal<?php echo $dados['ID']; ?>" class="btn-floating red modal-trigger">
                   <i class="material-icons">delete</i>
                 </a></td>
+
+                  <!-- Modal Structure -->
+              <div id="modal<?php echo $dados['ID']; ?>" 
+                class="modal">
+                <div class="modal-content">
+                  <p>Atenção! Confirma a exclusão do Vendedor ?</p>
+                </div>
+                <div class="modal-footer">
+                  
+
+                 <form action="DAO/delete.php" method="POST">
+                    <input type="hidden" name="id" 
+                    value="<?php echo $dados['ID']; ?>">
+                    <button type="submit" name="btn-deletar"
+                    class="btn red">Excluir Vendedor</button> 
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
+                 </form>
+                  
+
+                </div>
+              </div>
                
               </tr>
             <?php endwhile; ?>
