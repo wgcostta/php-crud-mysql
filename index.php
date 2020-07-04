@@ -23,6 +23,7 @@ include_once 'DAO/db_config.php';
           <?php
             $sql = "SELECT * FROM vendedores";
             $resultado = mysqli_query($connect,$sql);
+            if(mysqli_num_rows($resultado) > 0)  :
             while($dados = mysqli_fetch_array($resultado)):
           ?>
               <tr>
@@ -60,7 +61,17 @@ include_once 'DAO/db_config.php';
               </div>
                
               </tr>
-            <?php endwhile; ?>
+            <?php 
+            endwhile;
+            else: ?>
+                <tr>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+              <?php
+                endif;
+             ?>
         </tbody>
       </table>
       <br>
