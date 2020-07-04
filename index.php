@@ -30,7 +30,7 @@ include_once 'includes/header.php';
         </tbody>
       </table>
       <br>
-      <a href="" class="btn">Adicionar Vendedor</a>
+      <a href="/view/adicionar.php" class="btn">Adicionar Vendedor</a>
     </div>
 </div>
 
