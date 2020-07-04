@@ -30,11 +30,11 @@ include_once 'DAO/db_config.php';
                 <td><?php echo $dados['NOME']; ?></td>
                 <td><?php echo $dados['EMAIL']; ?></td>
                 
-                <td><a href="" class="btn-floating blue">
+                <td><a href="view/editar.php?id=<?php echo $dados['ID']; ?>" class="btn-floating blue">
                   <i class="material-icons">edit</i>
                 </a></td>
 
-                <td><a href="" class="btn-floating red">
+                <td><a href="view/deletar.php?id=<?php echo $dados['ID']; ?>" class="btn-floating red">
                   <i class="material-icons">delete</i>
                 </a></td>
                
